@@ -13,6 +13,7 @@ using ToDoApi.Data;
 using ToDoApi.Helpers;
 using ToDoApi.Interfaces;
 using ToDoApi.Models;
+using ToDoApi.Repository;
 using ToDoApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -152,6 +153,7 @@ builder.Services.AddSwaggerGen(option =>
 
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddExceptionHandler<DefaultExceptionHandler>();
+builder.Services.AddScoped<IToDoRepository, ToDoRepository>();
 
 
 

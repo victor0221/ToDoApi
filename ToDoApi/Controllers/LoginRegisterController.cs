@@ -50,6 +50,8 @@ namespace ToDoApi.Controllers
         }
 
         [HttpPost("register")]
+        [SwaggerOperation("User Register")]
+        [SwaggerResponse(200, "OK", typeof(IEnumerable<registerDto>))]
         public async Task<IActionResult> Register([FromBody] registerDto registerDetails)
         {
             try
